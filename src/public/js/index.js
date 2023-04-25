@@ -22,7 +22,7 @@ Swal.fire({
 chatBox.addEventListener("keyup", (e) => {
   if (e.key === "Enter") {
     if (chatBox.value.trim().length > 0) {
-      socket.emit("message", { user: user, message: chatBox.value });
+      socket.emit("message", { user: user, message: chatBox.value, id: socket.id });
       chatBox.value = "";
     }
   }
@@ -35,9 +35,9 @@ socket.on("messageLogs", (messages) => {
     let div = document.createElement("span");
     let pUser = document.createElement("p");
     let pMessage = document.createElement("p");
-    pUser.innerHTML = `<strong>${message.user === user ? "Tú" : message.user}</strong>`;
+    pUser.innerHTML = `<strong>${message.id === socket.id ? "Tú" : message.user}</strong>`;
     pMessage.textContent = message.message;
-    message.user === user
+    message.id === socket.id
       ? div.classList.add("own_msg")
       : div.classList.add("other_msg");
     div.append(pUser, pMessage);

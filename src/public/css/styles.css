@@ -29,7 +29,7 @@ main h1 {
 }
 
 main .info {
-    width: 400px;
+    width: 375px;
     padding: .5rem;
     background-color: rgb(245, 245, 245);
     font-weight: bold;
@@ -49,7 +49,7 @@ main .username {
 }
 
 main #message_logs {
-    width: 400px;
+    width: 375px;
     display: flex;
     flex-direction: column;
     flex: 1;
@@ -81,7 +81,7 @@ main #message_logs .other_msg {
 }
 
 main #chat_box {
-    width: 400px;
+    width: 375px;
     margin-bottom: 2rem;
     padding: 15px 5px;
     font-size: 1rem;
